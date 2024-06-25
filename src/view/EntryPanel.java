@@ -32,7 +32,7 @@ public class EntryPanel extends JPanel {
         Pelanggaran pelanggaran = new Pelanggaran();
 
         setLayout(new GridBagLayout());
-        setBackground(new Color(234, 231, 224));  // Light orange background
+        setBackground(new Color(234, 231, 224)); 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.anchor = GridBagConstraints.WEST;
@@ -56,7 +56,7 @@ public class EntryPanel extends JPanel {
         katSedangButton = createRadioButton("Sedang");
         katBeratButton = createRadioButton("Berat");
         JPanel kategoriPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        kategoriPanel.setBackground(new Color(234, 231, 224));  // Light orange background
+        kategoriPanel.setBackground(new Color(234, 231, 224));  
         kategoriPanel.add(katRinganButton);
         kategoriPanel.add(katSedangButton);
         kategoriPanel.add(katBeratButton);
@@ -69,7 +69,7 @@ public class EntryPanel extends JPanel {
         bbRange = createLabel("0");
         baRange = createLabel("0");
         JPanel rangePoinPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        rangePoinPanel.setBackground(new Color(234, 231, 224));  // Light orange background
+        rangePoinPanel.setBackground(new Color(234, 231, 224));  
         rangePoinPanel.add(bbRange);
         rangePoinPanel.add(createLabel(" - "));
         rangePoinPanel.add(baRange);
@@ -89,7 +89,7 @@ public class EntryPanel extends JPanel {
         sidakButton = createRadioButton("Operasi Umum (Sidak)");
         hariBiasaButton = createRadioButton("Hari Biasa");
         JPanel kegiatanPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        kegiatanPanel.setBackground(new Color(234, 231, 224));  // Light orange background
+        kegiatanPanel.setBackground(new Color(234, 231, 224)); 
         kegiatanPanel.add(opsRutinButton);
         kegiatanPanel.add(sidakButton);
         kegiatanPanel.add(hariBiasaButton);
@@ -189,7 +189,7 @@ public class EntryPanel extends JPanel {
 
     private JRadioButton createRadioButton(String text) {
         JRadioButton radioButton = new JRadioButton(text);
-        radioButton.setBackground(new Color(234, 231, 224));  // Light orange background
+        radioButton.setBackground(new Color(234, 231, 224));  
         radioButton.setFont(new Font("Arial", Font.PLAIN, 16));
         return radioButton;
     }
@@ -197,7 +197,7 @@ public class EntryPanel extends JPanel {
     private JButton createButton(String text) {
         JButton button = new JButton(text);
         button.setFont(new Font("Arial", Font.BOLD, 16));
-        button.setBackground(new Color(42, 51, 66));  // Darker orange for button
+        button.setBackground(new Color(42, 51, 66));  
         button.setForeground(Color.WHITE);
         return button;
     }

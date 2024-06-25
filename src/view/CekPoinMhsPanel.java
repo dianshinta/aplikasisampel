@@ -14,20 +14,18 @@ public class CekPoinMhsPanel extends JPanel {
 
     public CekPoinMhsPanel(Controller controller) {
         setLayout(new GridBagLayout());
-        setBackground(new Color(234,231,224)); // Light orange background
+        setBackground(new Color(234,231,224)); 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10); // Adding padding between components
+        gbc.insets = new Insets(10, 10, 10, 10); 
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Total Points Label
         gbc.gridx = 0;
         gbc.gridy = 0;
         resultLabel = new JLabel("Range Total Poin: ");
         resultLabel.setFont(new Font("Arial", Font.BOLD, 14));
         add(resultLabel, gbc);
 
-        // Table for displaying violations
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.gridwidth = 2;

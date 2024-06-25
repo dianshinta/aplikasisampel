@@ -18,7 +18,7 @@ public class Database implements Serializable {
     private String loggedInNim = null;
 
     private final String DB_TYPE = "sqlite"; 
-    private final String DB_FILE = "uaspbo.db"; // Use forward slashes
+    private final String DB_FILE = "uaspbo.db"; 
 
     public Database() throws SQLException {
         mhsList = new ArrayList<>();
@@ -139,8 +139,8 @@ public class Database implements Serializable {
     }
 
     public List<Mahasiswa> getListMahasiswa() throws SQLException {
-        loadAllMahasiswa(); // Ensure the list is updated from the database
-        return new ArrayList<>(mhsList); // Return a copy to avoid external modification
+        loadAllMahasiswa(); 
+        return new ArrayList<>(mhsList); 
     }
 
     public int getTotalBbPointsByNim(String nim) throws SQLException {
@@ -199,7 +199,7 @@ public class Database implements Serializable {
     public void exportDataToCSVForNim(String filePath, String nim) throws SQLException, IOException {
         String query = "SELECT * FROM rekappelanggaran WHERE nim = ?";
         
-        try (Connection conn = getConnection(); // Use getConnection() here
+        try (Connection conn = getConnection(); 
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, nim);
     
@@ -228,7 +228,7 @@ public class Database implements Serializable {
 
     public Connection getConnection() throws SQLException {
         try {
-            Class.forName("org.sqlite.JDBC"); // Ensure the SQLite driver is loaded
+            Class.forName("org.sqlite.JDBC"); 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             throw new SQLException("SQLite JDBC Driver not found.", e);
@@ -273,7 +273,6 @@ public class Database implements Serializable {
         loggedInNim = null;
     }
 
-    // New method to update user points
     public void updateUserPoints(String nim, int newPoints) throws SQLException {
         String sql = "UPDATE userMhs SET totalPoin = ? WHERE username = ?";
         try (Connection conn = getConnection();
@@ -284,7 +283,6 @@ public class Database implements Serializable {
         }
     }
 
-    // New method to get total points for a user
     public int getTotalPoints(String nim) throws SQLException {
         String sql = "SELECT totalPoin FROM userMhs WHERE username = ?";
         try (Connection conn = getConnection();

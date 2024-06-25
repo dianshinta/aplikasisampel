@@ -14,13 +14,12 @@ public class RekapanDataPanel extends JPanel {
     private JScrollPane contentScrollPane;
 
     public RekapanDataPanel() {
-        setBackground(new Color(234,231,224)); // Set light orange background color
+        setBackground(new Color(234,231,224)); 
         setLayout(new BorderLayout());
         
-        // Create a panel with a margin
         JPanel tablePanel = new JPanel(new BorderLayout());
-        tablePanel.setBackground(new Color(255, 223, 186)); // Set light orange background color
-        tablePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Add margin
+        tablePanel.setBackground(new Color(255, 223, 186));
+        tablePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); 
         
         contentScrollPane = new JScrollPane();
         rekapanTable = new JTable();
@@ -51,24 +50,21 @@ public class RekapanDataPanel extends JPanel {
             }
         });
 
-        // Set custom renderer to colorize table cells
         rekapanTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
                 Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
                 if (!isSelected) {
-                    // Set different background colors for odd and even rows
                     if (row % 2 == 0) {
-                        c.setBackground(new Color(255, 241, 213)); // Light orange
+                        c.setBackground(new Color(255, 241, 213)); 
                     } else {
-                        c.setBackground(new Color(255, 224, 178)); // Slightly darker orange
+                        c.setBackground(new Color(255, 224, 178));
                     }
                 }
                 return c;
             }
         });
 
-        // Set custom renderer for "Batas Bawah Poin" and "Batas Atas Poin" columns
         rekapanTable.getColumnModel().getColumn(4).setCellRenderer(new PoinCellRenderer());
         rekapanTable.getColumnModel().getColumn(5).setCellRenderer(new PoinCellRenderer());
 
@@ -80,12 +76,10 @@ public class RekapanDataPanel extends JPanel {
     public void loadTableData() {
 
         DefaultTableModel dtm = (DefaultTableModel) rekapanTable.getModel();
-        //refresh table
         while(dtm.getRowCount()>0) {
             dtm.removeRow(0);
         }
         
-        //isi tabel
         try {
             for (Mahasiswa mhs : Database.getInstance().getListMahasiswa()) {
                 for (Pelanggaran pelanggaran : mhs.getpelanggaran()) {
@@ -109,11 +103,11 @@ public class RekapanDataPanel extends JPanel {
             Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
             int poinValue = Integer.parseInt(value.toString());
             if (poinValue <= 5) {
-                c.setBackground(new Color(144, 238, 144)); // Light green
+                c.setBackground(new Color(144, 238, 144)); 
             } else if (poinValue <= 10) {
-                c.setBackground(new Color(255, 215, 0)); // Gold
+                c.setBackground(new Color(255, 215, 0)); 
             } else {
-                c.setBackground(new Color(255, 99, 71)); // Tomato
+                c.setBackground(new Color(255, 99, 71)); 
             }
             return c;
         }

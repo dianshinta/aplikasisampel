@@ -16,25 +16,25 @@ public class UpdateFixPoinPanel extends JPanel {
     public UpdateFixPoinPanel(Controller controller) {
         this.controller = controller;
         setLayout(new GridBagLayout());
-        setBackground(new Color(234,231,224)); // Light orange background
+        setBackground(new Color(234,231,224)); 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10); // Adding padding between components
+        gbc.insets = new Insets(10, 10, 10, 10);
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        pointsLabel = new JLabel("Total Poin Pelanggaran: "); // Initialize without 0
-        pointsLabel.setFont(new Font("Arial", Font.BOLD, 16)); // Set font and style
+        pointsLabel = new JLabel("Total Poin Pelanggaran: "); 
+        pointsLabel.setFont(new Font("Arial", Font.BOLD, 16)); 
 
         updateYourPoints = new JLabel("Perbarui Poin Anda: ");
-        updateYourPoints.setFont(new Font("Arial", Font.PLAIN, 14)); // Set font and style
+        updateYourPoints.setFont(new Font("Arial", Font.PLAIN, 14)); 
 
-        pointsSpinner = new JSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1)); // Set spinner model
-        pointsSpinner.setFont(new Font("Arial", Font.PLAIN, 14)); // Set font and style
+        pointsSpinner = new JSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1)); 
+        pointsSpinner.setFont(new Font("Arial", Font.PLAIN, 14)); 
 
         updateButton = new JButton("Simpan");
-        updateButton.setBackground(new Color(42, 51, 66)); // Light yellow background
-        updateButton.setFont(new Font("Arial", Font.BOLD, 14)); // Set font and style
-        updateButton.setForeground(Color.WHITE); // Set text color
+        updateButton.setBackground(new Color(42, 51, 66)); 
+        updateButton.setFont(new Font("Arial", Font.BOLD, 14));
+        updateButton.setForeground(Color.WHITE); 
 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -48,8 +48,8 @@ public class UpdateFixPoinPanel extends JPanel {
 
         gbc.gridx = 0;
         gbc.gridy = 2;
-        gbc.gridwidth = 2; // Span both columns
-        gbc.anchor = GridBagConstraints.CENTER; // Center align the button
+        gbc.gridwidth = 2; 
+        gbc.anchor = GridBagConstraints.CENTER; 
         add(updateButton, gbc);
 
         updateButton.addActionListener(new ActionListener() {
