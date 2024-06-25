@@ -23,13 +23,12 @@ public class EntryExistingPanel extends JPanel {
 
     public EntryExistingPanel(Controller controller) {
         setLayout(new GridBagLayout());
-        setBackground(new Color(234, 231, 224));  // Light orange background
+        setBackground(new Color(234, 231, 224));  
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Adding components to the panel
         addComponent(createLabel("NIM:"), 0, 0, gbc);
         nimField = createTextField();
         addComponent(nimField, 1, 0, gbc);
@@ -44,7 +43,7 @@ public class EntryExistingPanel extends JPanel {
         katSedangButton = createRadioButton("Sedang");
         katBeratButton = createRadioButton("Berat");
         JPanel kategoriPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        kategoriPanel.setBackground(new Color(234, 231, 224));  // Light orange background
+        kategoriPanel.setBackground(new Color(234, 231, 224));  
         kategoriPanel.add(katRinganButton);
         kategoriPanel.add(katSedangButton);
         kategoriPanel.add(katBeratButton);
@@ -57,7 +56,7 @@ public class EntryExistingPanel extends JPanel {
         bbRange = createRangeLabel();
         baRange = createRangeLabel();
         JPanel rangePoinPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        rangePoinPanel.setBackground(new Color(234, 231, 224));  // Light orange background
+        rangePoinPanel.setBackground(new Color(234, 231, 224));  
         rangePoinPanel.add(bbRange);
         rangePoinPanel.add(createLabel(" - "));
         rangePoinPanel.add(baRange);
@@ -77,7 +76,7 @@ public class EntryExistingPanel extends JPanel {
         sidakButton = createRadioButton("Operasi Umum (Sidak)");
         hariBiasaButton = createRadioButton("Hari Biasa");
         JPanel kegiatanPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        kegiatanPanel.setBackground(new Color(234, 231, 224));  // Light orange background
+        kegiatanPanel.setBackground(new Color(234, 231, 224));  
         kegiatanPanel.add(opsRutinButton);
         kegiatanPanel.add(sidakButton);
         kegiatanPanel.add(hariBiasaButton);
@@ -154,7 +153,7 @@ public class EntryExistingPanel extends JPanel {
     private JLabel createLabel(String text) {
         JLabel label = new JLabel(text);
         label.setFont(new Font("Arial", Font.BOLD, 16));
-        label.setForeground(new Color(60, 60, 60)); // Dark grey text
+        label.setForeground(new Color(60, 60, 60));
         return label;
     }
 
@@ -167,21 +166,21 @@ public class EntryExistingPanel extends JPanel {
     private JLabel createRangeLabel() {
         JLabel label = new JLabel("0");
         label.setFont(new Font("Arial", Font.BOLD, 16));
-        label.setForeground(new Color(60, 60, 60)); // Dark grey text
+        label.setForeground(new Color(60, 60, 60)); 
         return label;
     }
 
     private JRadioButton createRadioButton(String text) {
         JRadioButton radioButton = new JRadioButton(text);
         radioButton.setFont(new Font("Arial", Font.PLAIN, 16));
-        radioButton.setBackground(new Color(234, 231, 224));  // Light orange background
+        radioButton.setBackground(new Color(234, 231, 224));  
         return radioButton;
     }
 
     private JButton createButton(String text) {
         JButton button = new JButton(text);
         button.setFont(new Font("Arial", Font.BOLD, 16));
-        button.setBackground(new Color(42, 51, 66));  // Darker orange for button
+        button.setBackground(new Color(42, 51, 66));  
         button.setForeground(Color.WHITE);
         return button;
     }

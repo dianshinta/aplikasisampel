@@ -18,36 +18,33 @@ public class CekPoinPanel extends JPanel {
 
     public CekPoinPanel(Controller controller) {
         setLayout(new GridBagLayout());
-        setBackground(new Color(234,231,224)); // Light orange background
+        setBackground(new Color(234,231,224)); 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10); // Adding padding between components
+        gbc.insets = new Insets(10, 10, 10, 10);
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // NIM Label
         gbc.gridx = 0;
         gbc.gridy = 0;
         JLabel nimLabel = new JLabel("NIM:");
         nimLabel.setFont(new Font("Arial", Font.BOLD, 14));
         add(nimLabel, gbc);
 
-        // NIM Field
         gbc.gridx = 1;
         nimField = new JTextField(20);
         nimField.setFont(new Font("Arial", Font.PLAIN, 14));
         add(nimField, gbc);
 
-        // Check Button
         gbc.gridx = 1;
         gbc.gridy = 1;
         checkButton = new JButton("Cek");
         checkButton.setFont(new Font("Arial", Font.BOLD, 14));
-        checkButton.setBackground(new Color(42, 51, 66)); // Orange background
+        checkButton.setBackground(new Color(42, 51, 66)); 
         checkButton.setForeground(Color.WHITE);
         checkButton.setFocusPainted(false);
         checkButton.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLineBorder(new Color(255, 87, 34)), // Darker orange border
-            BorderFactory.createEmptyBorder(10, 20, 10, 20) // Padding inside the button
+            BorderFactory.createLineBorder(new Color(255, 87, 34)),
+            BorderFactory.createEmptyBorder(10, 20, 10, 20) 
         ));
         checkButton.addActionListener(new ActionListener() {
             @Override
@@ -58,14 +55,12 @@ public class CekPoinPanel extends JPanel {
         });
         add(checkButton, gbc);
 
-        // Total Points Label
         gbc.gridx = 1;
         gbc.gridy = 2;
         resultLabel = new JLabel("Total Poin: ");
         resultLabel.setFont(new Font("Arial", Font.BOLD, 14));
         add(resultLabel, gbc);
 
-        // Table for displaying violations
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2;
@@ -86,7 +81,7 @@ public class CekPoinPanel extends JPanel {
     }
 
     public void updatePelanggaranTable(List<Pelanggaran> pelanggaranList) {
-        tableModel.setRowCount(0); // Clear existing data
+        tableModel.setRowCount(0); 
         for (Pelanggaran pelanggaran : pelanggaranList) {
             tableModel.addRow(new Object[]{
                 pelanggaran.getDeskripsi(),

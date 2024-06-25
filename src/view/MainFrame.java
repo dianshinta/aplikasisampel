@@ -75,7 +75,7 @@ public class MainFrame extends JFrame {
     private void updateMenuForPanel(JPanel panel) {
         if (panel instanceof HomeMhsPanel || panel instanceof CekPoinMhsPanel || panel instanceof UpdateFixPoinPanel) {
             menuHome.setText("Home");
-            menuHome.removeActionListener(menuHome.getActionListeners()[0]); // Remove existing action listeners
+            menuHome.removeActionListener(menuHome.getActionListeners()[0]); 
             menuHome.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     controller.showHomeMhsPanel();
@@ -83,7 +83,7 @@ public class MainFrame extends JFrame {
             });
         } else {
             menuHome.setText("Home");
-            menuHome.removeActionListener(menuHome.getActionListeners()[0]); // Remove existing action listeners
+            menuHome.removeActionListener(menuHome.getActionListeners()[0]); 
             menuHome.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     controller.showHomePanel();
